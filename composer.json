@@ -47,7 +47,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/common_helper_functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
