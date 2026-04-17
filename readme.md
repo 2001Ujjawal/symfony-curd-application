@@ -17,3 +17,8 @@ php bin/console doctrine:migrations:migrate
 sync -  created table php bin/console doctrine:migrations:sync-metadata-storage 
 
 migration fk key
+
+
+// git@github.com:2001Ujjawal/symfony-curd-application.git
+
+https://github.com/your-username/project-name.git

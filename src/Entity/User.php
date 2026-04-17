@@ -22,6 +22,9 @@ class User
     #[ORM\Column(length: 155, nullable: true)]
     private ?string $phone_no = null;
 
+    #[ORM\Column(length: 15)]
+    private ?string $image_path = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class User
     public function setPhoneNo(?string $phone_no): static
     {
         $this->phone_no = $phone_no;
+
+        return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return $this->image_path;
+    }
+
+    public function setImagePath(string $image_path): static
+    {
+        $this->image_path = $image_path;
 
         return $this;
     }
