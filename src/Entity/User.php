@@ -16,14 +16,17 @@ class User
     #[ORM\Column(length: 155)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 155)]
+    #[ORM\Column(length: 155, unique: true)]
     private ?string $email = null;
 
     #[ORM\Column(length: 155, nullable: true)]
     private ?string $phone_no = null;
 
-    #[ORM\Column(length: 15)]
+    #[ORM\Column(length: 155)]
     private ?string $image_path = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
 
     public function getId(): ?int
     {
@@ -74,6 +77,18 @@ class User
     public function setImagePath(string $image_path): static
     {
         $this->image_path = $image_path;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
 
         return $this;
     }

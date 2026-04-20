@@ -1,6 +1,13 @@
 <?php
 
+
 if (!function_exists('prt')) {
+    /**
+     * Debug print helper
+     *
+     * @param mixed $data
+     * @param bool $dieFlag (true = stop execution, false = continue)
+     */
     function prt($data, bool $dieFlag = true)
     {
         if ($dieFlag == true) {
@@ -31,3 +38,11 @@ if (!function_exists('vrd')) {
         return;
     }
 };
+
+
+if (!function_exists('required_filed_message')) {
+    function required_filed_message(string $filedName)
+    {
+        return $filedName . "is required";
+    }
+}
