@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\UserTypeEnum;
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +29,9 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
+
+    #[ORM\Column(length: 155, nullable: true)]
+    private ?string $user_type = null;
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +93,17 @@ class User
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+    public function getUserType(): ?string
+    {
+        return $this->user_type;
+    }
+
+    public function setUserType(string $user_type): static
+    {
+        $this->user_type = $user_type;
 
         return $this;
     }

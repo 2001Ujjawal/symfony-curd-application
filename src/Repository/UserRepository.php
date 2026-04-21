@@ -52,9 +52,9 @@ class UserRepository extends ServiceEntityRepository
         $user->setPassword($dto->password);
         $user->setPhoneNo($dto->phone_no);
         $user->setImagePath($dto->image);
+        $user->setUserType($dto->user_type);
         $this->getEntityManager()->persist($user);
         $this->getEntityManager()->flush();
-
         return true;
     }
 }

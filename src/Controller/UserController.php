@@ -18,13 +18,10 @@ use Symfony\Component\Serializer\SerializerInterface;
 #[Route('/api')]
 class UserController extends AbstractController
 {
-    // private FileUploadService $fileUploadService;
-
     public function __construct()
     {
         // $this->fileUploadService = new FileUploadService();
     }
-
 
     #[Route('/users', name: 'add_user', methods: ['post'])]
     public function createUser(
@@ -99,9 +96,6 @@ class UserController extends AbstractController
         }
     }
 
-
-
-
     #[Route('/users', name: 'users_list', methods: ['GET'])]
     public function usersList(UserRepository $userRepository): JsonResponse
     {
@@ -142,4 +136,6 @@ class UserController extends AbstractController
             return  CatchErrorHandle::response($e);
         }
     }
+    
+    //  
 }

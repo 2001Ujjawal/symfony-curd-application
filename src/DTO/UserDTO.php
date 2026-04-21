@@ -27,4 +27,10 @@ class UserDTO
     #[Assert\Type(type: 'string', message: 'phone number must be string')]
     #[Assert\Length(min: 10, minMessage: "phone number must be at least 6 characters")]
     public ?string $phone_no = null;
+
+    #[Assert\NotBlank(message: "User type is required")]
+    #[Assert\Choice(choices: ['user', 'vendor'], message: 'valid type user , vendor')]
+    public ?string $user_type = 'user';
+
+    // public ?UserTypeEnum $user_type = UserTypeEnum::USER;
 }
